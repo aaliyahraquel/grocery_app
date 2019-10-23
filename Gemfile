@@ -9,4 +9,7 @@ gem "rspec"
 gem "capybara"
 gem "sinatra-namespace"
 gem "rake"
+
+
 gem "pg"
+
