@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Morganite';
+  src: url('./Morganite/Morganite-Light.ttf');
+}
+
+body {
+  color: darkgreen;
+  background-image: url("./sunny-day-white-sky-4k-time-lapse_ekyxov3___F0000.dms");
+  background-attachment: fixed;
+  text-align: center;
+}
+
+h1 {
+  font-family: Morganite;
+  font-size: 200px;
+}
