@@ -1,1 +1,0 @@
-ALTER TABLE groceries ADD COLUMN price FLOAT;
