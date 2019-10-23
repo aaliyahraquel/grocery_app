@@ -1,10 +1,11 @@
+ENV['environemt'] = 'test'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
-Capybara.app = GroceryApp
+ Capybara.app = GroceryApp
 
-ENV['environemt'] = 'test'
-require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 
 
