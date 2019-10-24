@@ -13,8 +13,8 @@ class GroceryApp < Sinatra::Base
 
   post '/choice' do
     @choice = params['choice']
-    Grocery.cart(@choice)
-    "#{@choice} has been added!"
+    @cart = Grocery.cart(@choice)
+    "#{@cart} has been added!"
   end
 
   run! if app_file == $0
