@@ -31,14 +31,17 @@
     <h1> The greatest grocery app! </h1>
     <p> Pick your items, and we'll tell you how much your spending in each category! </p>
 
-   <% @grocery.each do |item| %>
-    <button formaction = '/choice' type="submit" value = '<%item.item %>' name = 'choice'>
-      <li>
-                <%= item.item %>
-                <%= item.price %>
-      </li>
-    </button>
-   <% end %>
+
+  <form action= '/choice' method='post'>
+  Choose your item:
+  <% @grocery.each do |item| %>
+
+  <input type="submit" value= "<%= item.item %>" name="choice">
+
+     <% end %>
+</form>
+
+
 
   </div>
 <script type="text/javascript">
