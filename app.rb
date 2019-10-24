@@ -11,5 +11,10 @@ class GroceryApp < Sinatra::Base
     erb :index
   end
 
+  post '/choice' do
+    $choice = params['choice']
+    "#{params['choice']} has been added!"
+  end
+
   run! if app_file == $0
 end
