@@ -1,6 +1,8 @@
 require "pg"
 
 class Grocery
+
+  @cart = []
   def self.all
     connection = PG.connect(dbname: 'grocerydb')
 
@@ -11,12 +13,12 @@ class Grocery
   end
 
   def self.cart(item)
-    @cart = []
-    @cart << item
-    return @cart
+      @cart << item
+      return @cart
+
   end
 
-  attr_reader :id, :item, :price
+  attr_reader :id, :item, :price, :cart
 
   def initialize(id:, item:, price:)
     @id = id
@@ -26,4 +28,3 @@ class Grocery
 end
 
 items = Grocery.all
-puts "#{items}"
