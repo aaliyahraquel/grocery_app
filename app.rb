@@ -11,5 +11,11 @@ class GroceryApp < Sinatra::Base
     erb :index
   end
 
+  post '/choice' do
+  $choice = params['choice']
+ # redirect '/'
+ "hi #{params['choice']}"
+ end
+
   run! if app_file == $0
 end
