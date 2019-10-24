@@ -12,10 +12,11 @@ class GroceryApp < Sinatra::Base
   end
 
   post '/choice' do
-    $choice = params['choice']
-    "#{params['choice']} has been added!"
+    @choice = params['choice']
+    Grocery.cart(@choice)
+    "#{@choice} has been added!"
   end
 
-
   run! if app_file == $0
+
 end

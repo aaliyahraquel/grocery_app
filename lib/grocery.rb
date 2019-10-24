@@ -10,6 +10,12 @@ class Grocery
 
   end
 
+  def self.cart(item)
+    @cart = []
+    @cart << item
+    return @cart
+  end
+
   attr_reader :id, :item, :price
 
   def initialize(id:, item:, price:)
@@ -18,3 +24,6 @@ class Grocery
     @price = price
   end
 end
+
+items = Grocery.all
+puts "#{items}"
