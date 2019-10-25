@@ -1,13 +1,13 @@
-require "sinatra/base"
+require 'sinatra/base'
 require './lib/grocery'
-require "pg"
+require 'pg'
 
 
 class GroceryApp < Sinatra::Base
 
   get ('/') do
     @grocery = Grocery.all
-    "Welcome to the Grocery App!"
+    'Welcome to the Grocery App!'
     erb :index
   end
 

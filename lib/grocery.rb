@@ -13,7 +13,6 @@ class Grocery
   def self.cart(item)
     @cart = []
     @cart << item
-    return @cart
   end
 
   attr_reader :id, :item, :price
