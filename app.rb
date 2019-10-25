@@ -7,7 +7,7 @@ class GroceryApp < Sinatra::Base
 
   get ('/') do
     @grocery = Grocery.all
-     erb :index
+    erb :index
   end
 
   post '/choice' do
