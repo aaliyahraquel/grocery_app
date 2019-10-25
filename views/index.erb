@@ -19,7 +19,7 @@
             // Show text content of plain paragraph
             $(".show-confirmation").click(function(){
                 var item = <%= @choice.to_json %>
-                alert($(".plain").text() + item + "has been added to the cart!");
+                alert($(".plain").text() + "This has been added to your cart!");
             });
         });
     </script>
@@ -42,7 +42,9 @@
 
 
   </div>
+<script type="text/javascript">
 
+</script>
 
 </body>
 
