@@ -2,7 +2,7 @@ require "pg"
 
 class Grocery
 
-  @cart = []
+  @basket = []
 
   def self.all
     connection = PG.connect(dbname: 'grocerydb')
@@ -21,10 +21,12 @@ class Grocery
     result.map { |groceries|
       Grocery.new(id: groceries['id'], item: groceries['items'], price: groceries['price'], category: groceries['category'])
     }
-end
+  end
 
-
-  attr_reader :id, :item, :price, :cart, :category
+  def self.basket(choice)
+    @basket << choice
+  end
+  attr_reader :id, :item, :price, :basket, :category
 
   def initialize(id:, item:, price:, category:)
     @id = id
