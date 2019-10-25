@@ -7,21 +7,12 @@ class GroceryApp < Sinatra::Base
 
   get ('/') do
     @grocery = Grocery.all
-    'Welcome to the Grocery App!'
-    erb :index
+     erb :index
   end
 
   post '/choice' do
     @choice = params['choice']
     @cart = Grocery.cart(@choice)
-
-    "Your shopping list is: #{@cart}"
-    # "#{@cart} has been added!"
+    erb :form
   end
-end
-
-
-
-  run! if app_file == $0
-
 end
