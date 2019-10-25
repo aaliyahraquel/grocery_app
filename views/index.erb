@@ -18,7 +18,8 @@
         $(document).ready(function(){
             // Show text content of plain paragraph
             $(".show-confirmation").click(function(){
-                alert($(".plain").text() + "<%= @choice %>" + "has been added to the cart!");
+                var item = <%= @choice.to_json %>
+                alert($(".plain").text() + item + "has been added to the cart!");
             });
         });
     </script>

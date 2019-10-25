@@ -14,8 +14,6 @@ class Grocery
 
   def self.cart(item)
       @cart << item
-      return @cart
-
   end
 
   attr_reader :id, :item, :price, :cart
@@ -27,4 +25,4 @@ class Grocery
   end
 end
 
-items = Grocery.all
+
