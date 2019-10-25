@@ -1,4 +1,4 @@
-<%="#{@cart} has been added!"%>
+
 <h1> Welcome to your cart </h1>
 
 <form action = '/' >
@@ -6,9 +6,12 @@
   </form>
 
 
-  Choose your item:
-  <% @category.each do |item| %>
 
-  <%= item.category %>
+  <form action= '/choice' method='post'>
+    Your category is:
+    <% @cart.each do |item| %>
 
-     <% end %>
+    <input type="submit" value= "<%= item.category %>" name="choice">
+
+    <% end %>
+  </form>

@@ -13,8 +13,7 @@ class GroceryApp < Sinatra::Base
   post '/choice' do
     @choice = params['choice']
     @cart = Grocery.cart(@choice)
-    @category = Grocery.categorize(@cart)
+    "This is the cart #{@cart}"
     erb :form
-
   end
 end
