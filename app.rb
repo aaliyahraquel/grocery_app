@@ -14,14 +14,8 @@ class GroceryApp < Sinatra::Base
   post '/choice' do
     @choice = params['choice']
     @cart = Grocery.cart(@choice)
-
-    "Your shopping list is: #{@cart}"
+    @category = Grocery.categorize(@cart)
+    "Your shopping list is: #{@cart}, #{@category}"
     # "#{@cart} has been added!"
   end
-end
-
-
-
-  run! if app_file == $0
-
 end
