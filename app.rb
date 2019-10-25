@@ -7,7 +7,6 @@ class GroceryApp < Sinatra::Base
 
   get ('/') do
     @grocery = Grocery.all
-    'Welcome to the Grocery App!'
     erb :index
   end
 
@@ -15,7 +14,7 @@ class GroceryApp < Sinatra::Base
     @choice = params['choice']
     @cart = Grocery.cart(@choice)
     @category = Grocery.categorize(@cart)
-    "Your shopping list is: #{@cart}, #{@category}"
-    # "#{@cart} has been added!"
+    erb :form
+
   end
 end

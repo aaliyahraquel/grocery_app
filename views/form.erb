@@ -4,3 +4,11 @@
 <form action = '/' >
  <input type = "submit" value = "Return to main page"></input>
   </form>
+
+
+  Choose your item:
+  <% @category.each do |item| %>
+
+  <%= item.category %>
+
+     <% end %>

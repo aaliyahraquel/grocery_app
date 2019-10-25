@@ -3,30 +3,35 @@ require "pg"
 class Grocery
 
   @cart = []
+
   def self.all
     connection = PG.connect(dbname: 'grocerydb')
 
     result = connection.exec("SELECT * FROM groceries;")
     result.map { |groceries|
-      Grocery.new(id: groceries['id'], item: groceries['items'], price: groceries['price'], category: groceries['categories'])
+      Grocery.new(id: groceries['id'], item: groceries['items'], price: groceries['price'], category: groceries['category'])
     }
   end
 
   def self.cart(item)
+
     @cart << item
 
   end
 
   def self.categorize(cart)
+
     connection = PG.connect(dbname: 'grocerydb')
     cart.each { |item|
     result = connection.exec("SELECT * FROM groceries WHERE items = '#{item}';")
 
     result.map { |groceries|
-      Grocery.new(id: groceries['id'], item: groceries['items'], price: groceries['price'], category: groceries['categories'])
+      Grocery.new(id: groceries['id'], item: groceries['items'], price: groceries['price'], category: groceries['category'])
     }
     }
   end
+
+
 
 
   attr_reader :id, :item, :price, :cart, :category
